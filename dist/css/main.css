@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  color: rgb(255, 255, 255);
+  background-color: #C7B198;
+}
+
+.container {
+  margin-top: 100px;
+}
+.container .user {
+  margin: 20px 100px;
+  text-align: center;
+  height: 50px;
+}
+.container .user #nom-user {
+  color: red;
+  font-size: 18px;
+}
+.container .user h3 {
+  color: rgb(47, 255, 106);
+}
+.container .user input {
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid gray;
+  background-color: rgb(253, 253, 253);
+}
+.container .user input:focus {
+  background-color: rgb(206, 218, 216);
+  border-radius: 2px;
+  height: 40px;
+  font-size: 18px;
+  width: 80%;
+}
+.container .progressbar {
+  counter-reset: etape;
+}
+.container .progressbar li {
+  list-style-type: none;
+  float: left;
+  width: 33.33%;
+  position: relative;
+  text-align: center;
+  font-weight: 600;
+}
+.container .progressbar li::before {
+  /* CSS pour crer  steper block avant les li */
+  counter-increment: etape;
+  content: "etape:" counter(etape);
+  height: 40px;
+  width: 90px;
+  border: 2px solid rgb(43, 40, 40);
+  display: block;
+  padding-top: 12px;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+.container .progressbar li::after {
+  /* CSS pour crer horizontal line*/
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #ddd;
+  top: 25px;
+  left: -50%;
+  z-index: -1;
+}
+.container .progressbar li:first-child::after {
+  content: none;
+}
+.container .progressbar li.active {
+  color: #05795c;
+}
+.container .progressbar li.active::before {
+  border-color: #05795c;
+}
+.container .progressbar li.active + li::after {
+  -webkit-animation: backgrounds 2s infinite;
+          animation: backgrounds 2s infinite;
+}
+@-webkit-keyframes backgrounds {
+  0% {
+    background-color: #abff2d;
+  }
+  50% {
+    background-color: #02ad02;
+  }
+  100% {
+    background-color: #08effb;
+  }
+}
+@keyframes backgrounds {
+  0% {
+    background-color: #abff2d;
+  }
+  50% {
+    background-color: #02ad02;
+  }
+  100% {
+    background-color: #08effb;
+  }
+}
+
+.info_box {
+  margin-top: 150px;
+}
+.info_box #time-counter {
+  color: red;
+}
+.info_box .info-title {
+  color: rgb(255, 159, 14);
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px #2232a9;
+}
+.info_box .info-list {
+  display: block;
+  text-align: center;
+  line-height: 40px;
+}
+.info_box .buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 80px;
+}
+.info_box .buttons .next, .info_box .buttons .retour, .info_box .buttons .submit, .info_box .buttons .replay {
+  margin-right: 5px;
+  cursor: pointer;
+  width: 90%;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-family: "Poiret One", cursive;
+  font-size: 16px;
+  border-radius: 69px;
+  background: #2ecc71;
+}
+.info_box .buttons .next:hover, .info_box .buttons .retour:hover, .info_box .buttons .submit:hover, .info_box .buttons .replay:hover {
+  background: #26ab5f;
+  transition: all 0.3s ease;
+}
+.info_box .buttons .next:active, .info_box .buttons .retour:active, .info_box .buttons .submit:active, .info_box .buttons .replay:active {
+  background: #176437;
+}
+.info_box .buttons .replay {
+  background: #6b6807;
+}
+.info_box .buttons .replay:hover {
+  background: #454304;
+  transition: all 0.3s ease;
+}
+.info_box .buttons .replay:active {
+  background: black;
+}
+.info_box .buttons .submit {
+  background: #07396b;
+}
+.info_box .buttons .submit:hover {
+  background: #042545;
+  transition: all 0.3s ease;
+}
+.info_box .buttons .submit:active {
+  background: black;
+}
+.info_box .buttons .retour {
+  background: #84115e;
+}
+.info_box .buttons .retour:hover {
+  background: #600c44;
+  transition: all 0.3s ease;
+}
+.info_box .buttons .retour:active {
+  background: #13020e;
+}
+
+.quiz_box .title, .quiz_box .answers-box {
+  font-size: 14px;
+  color: rgb(252, 255, 252);
+  text-align: center;
+  border: 2px dashed rgb(41, 18, 170);
+  border-radius: 5px;
+  margin: 20px;
+}
+.quiz_box .answers-box {
+  font-size: 13px;
+  padding: 30px;
+}
+.quiz_box .answers-box .answers {
+  padding: 0px 10px;
+  display: flex;
+  justify-content: start;
+  background-color: #b8c1ec;
+  border-radius: 4px;
+  height: 60px;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 3px 3px #2ecc71;
+}
+.quiz_box .answers-box .answers:not(:last-child) {
+  border-bottom: 2px solid rgb(249, 249, 249);
+}
+.quiz_box .answers-box .answers #option_0 {
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  margin: 2px;
+}
+.quiz_box .answers-box .answers #option_1 {
+  cursor: pointer;
+  color: rgb(10, 7, 70);
+  font-size: 15px;
+  margin: 2px;
+}
+.quiz_box .answers-box .answers #option_2 {
+  cursor: pointer;
+  color: rgb(20, 14, 140);
+  font-size: 16px;
+  margin: 2px;
+}
+.quiz_box .answers-box .answers #option_3 {
+  cursor: pointer;
+  color: rgb(30, 21, 210);
+  font-size: 17px;
+  margin: 2px;
+}
+.quiz_box .answers-box .num-question {
+  margin-top: 10px;
+  height: 30px;
+  align-items: center;
+  padding-top: 6px;
+  background-color: rgb(81, 148, 170);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.quiz_box .answers-box #nom-user {
+  color: #ff4203;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+  box-shadow: 2px 2px 2px 2px rgb(201, 255, 74);
+}/*# sourceMappingURL=main.css.map */

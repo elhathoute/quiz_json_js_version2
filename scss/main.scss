@@ -1,0 +1,133 @@
+@import 'config';
+@import 'variables';
+@import 'etape'; 
+
+.info_box{
+   margin-top: 150px;
+    #time-counter{
+      color: $red-color;
+    }
+   .info-title{
+    color: rgb(255, 159, 14);
+    text-align: $text-align;
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-shadow:1px 1px #2232a9;
+  
+   }
+   .info-list{
+     display: block;
+    text-align: $text-align;
+   
+     line-height:40px;
+}
+   .buttons{
+
+   display: flex;
+   justify-content: space-around;
+   align-items:$text-align;
+   padding: 10px 80px;
+  
+   .next{
+   margin-right: 5px;
+    cursor: pointer;
+    width: 90%;
+    color:white;
+    text-decoration:none;
+    padding:5px 10px;
+    border-radius:3px;
+    font-family: 'Poiret One', cursive;
+    font-size:16px;
+    border-radius: 69px;
+    @include button-bg(#2ecc71);
+   }
+   .replay{
+      @extend .next;
+      @include button-bg(#6b6807);
+      
+      
+   }
+   .submit{
+      @extend .next;
+      @include button-bg(#07396b);
+      
+   }
+   .retour{
+      @extend .next;
+      @include button-bg(#84115e);
+
+   }
+}
+}
+
+.quiz_box{
+   .title{
+      font-size: 14px;
+      color: rgb(252, 255, 252);
+      text-align: center;
+      border: 2px dashed rgb(41, 18, 170);
+      border-radius: 5px;
+      margin: 20px;
+   }
+ .answers-box{
+   @extend .title;
+   font-size: 13px;
+   padding: 30px;
+
+  .answers{
+   padding: 0px 10px ;
+   display: flex;
+   justify-content: start;
+   background-color: $background-answers;
+   border-radius: 4px;
+   height:60px;
+   cursor: pointer;
+   padding: 15px;
+  margin-top: 10px;
+  box-shadow:3px 3px  $shadow-answers;
+   &:not(:last-child) {
+      border-bottom: 2px solid rgb(249, 249, 249);
+   }
+  
+  
+   $i:0;
+   @while($i<4){
+      & #option_#{$i}{
+         cursor: pointer;
+         color: rgb(10*$i, 7*$i, 70*$i);
+         @if($i==0){
+            font-size: 16px;
+         }@else{
+            font-size: 14px+$i;
+         }
+         $i:$i+1;
+         margin:2px;
+      }
+     
+   }
+   
+  }
+
+  .num-question{
+   margin-top: 10px;
+   height: 30px;
+   align-items: center;
+   padding-top: 6px;
+   background-color: rgb(81, 148, 170);
+   color: white;
+   font-size:14px;
+   font-weight:bold;
+   border-radius: 5px;
+  }
+
+  #nom-user{
+   color: $user-color;
+   font-size: 16px;
+   font-weight: bold;
+   margin-right: 10px;
+   box-shadow: 2px 2px  2px 2px $shadow-user;
+  }
+ }
+
+
+}

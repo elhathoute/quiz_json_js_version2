@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="dist/css/main.css">
+    <title>Quizz</title>
+</head>
+<body>
+    <!-- input -->
+
+    <!-- bar d'avencement -->
+    <div class="container">
+        <div id="user" class="user">
+            <input  required autocomplete="none" placeholder="Votre Nom" type="text" name="user-input" id="user-input">
+            
+        </div>
+    <ul class="progressbar">
+    <li id="information" class="active">Information</li>
+    <li id="quiz" >Quiz</li>
+    <li id="resultat">Result</li>
+    </ul>
+    </div>
+    <!-- fin bar d'avencement -->
+    <!-- progress bar -->
+    
+    <!-- information quiz -->
+     <!-- Info Box -->
+     <div class="info_box">
+        <div id="info-title" class="info-title"><span>Some Rules of this Quiz</span></div>
+        
+        <div id="time-counter" class="info-title">30 seconds</div>
+        <div id="info-list" class="info-list">
+            <div class="info">1. You will have only <span>30 seconds</span> per each question. <i class="fa fa-clock-o" aria-hidden="true"></i></div>
+            <div class="info">2.enter your name Required!</div>
+            <div class="info">3. You can replay text </div>
+            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">5. You'll get points  of your correct answers.</div>
+        </div>
+
+          <!-- debut quiz -->
+              <div class="quiz-area"></div>
+              <div class="answers-area"></div>
+    <div id="quiz_box" class="quiz_box">
+        <div id="title" class="title"> </div>
+        <div id="answers-box" class="answers-box"></div>    
+    </div>
+            <!-- fin quiz -->
+
+
+        <div  class="buttons">
+            <button id="replay"  class="replay"><i class="fa fa-reply" aria-hidden="true"></i> Replay</button>
+            <button  id="next"  class="next"><i class="fa fa-check" aria-hidden="true"> </i> Accept</button>
+            <button  id="retour"  class="retour"><i class="fa fa-arrow-left" aria-hidden="true"></i> retour</button>
+            <button  id="submit"  class="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
+           
+           
+        </div>
+    </div>
+    <!-- fin information quiz -->
+  
+    </body>
+    <script src="dist/main.js"></script>
+</html>

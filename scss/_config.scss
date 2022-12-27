@@ -1,0 +1,46 @@
+
+@mixin flex($justify-content){
+    display: flex;
+    align-items: $justify-content;
+    justify-content: center;
+}
+
+@mixin backrounds-animation {
+    @keyframes backgrounds {
+        0% {
+          background-color: $backround0;
+        }
+        50% {
+          background-color:$backround50;
+        }
+        100% {
+          background-color: $backround100;
+        }
+    }
+    animation: backgrounds 2s infinite;
+}
+
+@mixin button-bg($bg) {
+    background: $bg;
+    &:hover {
+      background:darken($bg,8%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background:darken($bg,25%);
+    } 
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family:  Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  color: rgb(255, 255, 255);
+  // background-image: url("https://th.bing.com/th?id=OIF.LFQd2j%2b7dAGlQVnmvYvsCw&pid=ImgDet&rs=1");
+ 
+  background-color: #C7B198;
+}

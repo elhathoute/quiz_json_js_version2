@@ -1,0 +1,94 @@
+
+
+.container {
+
+ margin-top: 100px;
+
+  .user{
+   
+    margin:20px 100px;
+ 
+    text-align: center;
+    height: 50px;
+  
+    #nom-user{
+        color: red;
+        font-size: 18px;
+        
+    }
+    h3{
+        color: rgb(47, 255, 106);
+    }
+    input{
+        // width: 100%;
+        height: 30px;
+        border-radius:5px;
+        border:2px solid gray;
+        background-color: rgb(253, 253, 253);
+
+        
+    }
+    input:focus{
+        background-color: rgb(206, 218, 216);
+        border-radius:2px;
+        height: 40px;
+        font-size: 18px;
+        width: 80%;
+    }
+  }
+ 
+  .progressbar {
+      counter-reset:etape;
+     
+      li{
+          list-style-type: none;
+          float: left;
+          width: 33.33%;
+          position:relative;
+          // top:50px;
+          text-align: center;
+          font-weight: 600;
+          &::before{
+              /* CSS pour crer  steper block avant les li */
+              counter-increment: etape;
+              content:'etape:'counter(etape);
+              height:40px;
+              width:90px;
+              border: 2px solid $black-color;
+              display:block;
+              padding-top: 12px;
+              text-align: center;
+              margin: 0 auto 10px auto;
+              border-radius: 50%;
+              background-color:$backround-etape;
+              }
+              &::after {
+                  /* CSS pour crer horizontal line*/
+                  content:'';
+                  position: absolute;
+                  width:100%;
+                  height:5px;
+                  background-color: $backround-non-active-line;
+                  top: 25px;
+                  left: -50%;
+                  z-index: -1;
+                  }
+                  &:first-child::after {
+                      content:none;
+                      }
+              &.active {
+                          color:$color-active-etape;
+                          }
+                  &.active::before {
+                          border-color:$color-active-etape;
+                          }
+                  &.active + li::after{
+                     @include backrounds-animation();
+                          }
+          }
+
+      }
+  }
+
+  
+  
