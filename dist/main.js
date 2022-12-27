@@ -124,8 +124,11 @@ user_input.addEventListener("keyup",function(){
 //generat an array random between 0 and lengh of question 
 random= randomOfArray(questions);
 
+submit.style.display="none";
 //btn of accept
 next.addEventListener('click',function(){
+  //disbled submit if no question chosen
+
   //time count down
   countDownTime(30,questionCount);
   //create a div to store name of user
@@ -151,7 +154,24 @@ next.addEventListener('click',function(){
     touslesAttribut=random[currentIndex];
     //appeler la fnct pour add questions
     ajouterQuestion(touslesAttribut,arrRandom,questionCount);
+   
+  let lesReponse=document.querySelectorAll("input[type=radio]");
+  console.log(lesReponse);
+  lenghtQuestion=lesReponse.length;
+for(i=0;i<lenghtQuestion;i++){
+  
+  lesReponse[i].addEventListener('change',function(){
+    if(this.checked){
+      submit.style.display="block";
+    }else{
+      submit.style.display="none";
+    }
   });
+}
+  
+  });
+ 
+  
 
   //btn of submit
   submit.onclick=function(){
@@ -191,6 +211,21 @@ next.addEventListener('click',function(){
       touslesAttribut=random[currentIndex];
      ajouterQuestion(touslesAttribut,arrRandom,questionCount);
      } 
+
+     //if user no chosen any option and time>0
+     let lesReponse=document.querySelectorAll("input[type=radio]");
+     console.log(lesReponse);
+     lenghtQuestion=lesReponse.length;
+   for(i=0;i<lenghtQuestion;i++){
+     
+     lesReponse[i].addEventListener('change',function(){
+       if(this.checked){
+         submit.style.display="block";
+       }else{
+         submit.style.display="none";
+       }
+     });
+   }
  
     
 
@@ -198,6 +233,7 @@ next.addEventListener('click',function(){
  //function to add quizz
 
 function ajouterQuestion(tquest,quest,count){
+  submit.style.display="none";
 // console.log(tquest);
 // console.log(quest);
  if(currentIndex<count){
@@ -220,6 +256,7 @@ function ajouterQuestion(tquest,quest,count){
       let radio=document.createElement("input");
       //add type+name+id+data-attribute
       radio.name='question';
+      radio.className='choise-question';
       radio.type='radio';
       radio.id=`option_${i}`;
     
@@ -276,6 +313,7 @@ function compareReponse(answer,index){//current index
           console.log('array answer correct =>'+arrayCorrectQuest);
         }
   }
+  
 
   }
 
@@ -315,8 +353,8 @@ if(arrayCorrectQuest.length>0){
 }
     
    
-    submit.style.display="none";
-    retour.style.display="none";
+    // submit.style.display="none";
+    // retour.style.display="none";
     quizBar.classList.remove('active');
     resultat.classList.add('active');
     replay.style.display="block";
@@ -333,7 +371,7 @@ if(arrayCorrectQuest.length>0){
 function removeBtnNext(){
   next.style.display="none";
   time_count.style.display="block";
-  submit.style.display="block";
+  // submit.style.display="block";
  
 
 }
