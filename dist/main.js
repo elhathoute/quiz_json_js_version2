@@ -150,7 +150,7 @@ random= randomOfArray(questions);
 submit.style.display="none";
 //btn of accept
 next.addEventListener('click',function(){
-  //disbled submit if no question chosen
+ 
 
   //time count down
   countDownTime(30,questionCount);
@@ -159,7 +159,7 @@ next.addEventListener('click',function(){
   user_input.replaceWith(divUser);
   let nomUser=user_input.value;
   nomUser.className="nom_user";
-  divUser.innerHTML="<h3>Bonjour <i class='fa fa-user' aria-hidden='true'></i>  : <span id='nom-user'>"+nomUser +" </span></h3>";
+  divUser.innerHTML="<h3>😎 Welcome  😎  : <span id='nom-user'>"+nomUser +" </span></h3>";
   //remove btn of  accept and show submit btn
    removeBtnNext();
    //disabled condition of quizz
