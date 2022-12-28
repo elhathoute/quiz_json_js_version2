@@ -28,26 +28,49 @@ let questions =[
     explication:"Q3:D- <a href='https://aws.amazon.com/marketplace/'>AWS Marketplace</a> is a digital catalog with thousands of software listings from independent software vendors that makes it easy to find, test, buy, and deploy software that runs on AWS."
     
   },{
-    question:"4-chno smitk",
-    0:"azize",
-    1:"khalid",
-    2:"rachid",
-    3:"kamal",
-    vrai:"azize",
-    explication:"Q:A- mkyn ta explication."
+    question:"4-Which AWS networking service enables a company to create a virtual network within AWS?",
+    0:"AWS Config",
+    1:"Amazon Route 53",
+    2:"AWS Direct Connect",
+    3:"Amazon Virtual Private Cloud (Amazon VPC)",
+    vrai:"Amazon Virtual Private Cloud (Amazon VPC)",
+    explication:"Q4:D- <a href='https://aws.amazon.com/vpc/'>Amazon VPC<a> lets users provision a logically isolated section of the AWS Cloud where users can launch AWS resources in a virtual network that they define."
     
   },{
-    question:"5-chno knitk",
-    0:"azize",
-    1:"hathout",
-    2:"rachid",
-    3:"kamal",
-    vrai:"hathout",
-    explication:"Q:B- mkyn ta explication."
+    question:"5-Which of the following is an AWS responsibility under the AWS shared responsibility model?",
+    0:"Configuring third-party applications",
+    1:"Maintaining physical hardware",
+    2:"Securing application access and data",
+    3:"Managing guest operating systems",
+    vrai:"Maintaining physical hardware",
+    explication:"Q5:B- – Maintaining physical hardware is an AWS responsibility under the<a href='https://aws.amazon.com/compliance/shared-responsibility-model/'> AWS shared responsibility model<a> "
     
+  },{
+    question:"6- Which component of the AWS global infrastructure does Amazon CloudFront use to ensure low-latency delivery?",
+    0:"AWS Regions",
+    1:"Edge locations",
+    2:"Availability Zones",
+    3:"Virtual Private Cloud (VPC)",
+    vrai:"Edge locations",
+    explication:"Q6:B- – To deliver content to users with lower latency<a href='https://aws.amazon.com/cloudfront/'>Amazon CloudFront<a> uses a global network of points of presence (edge locations and regional edge caches) worldwide "
   }
-
- 
+  ,{
+    question:"7-  How would a system administrator add an additional layer of login security to a user's AWS Management Console?",
+    0:"Use Amazon Cloud Directory",
+    1:"Audit AWS Identity and Access Management (IAM) roles",
+    2:"Enable multi-factor authentication",
+    3:"Enable AWS CloudTrail",
+    vrai:"Enable multi-factor authentication",
+    explication:"Q7:C- – <a href='https://aws.amazon.com/iam/features/mfa/'>Multi-factor authentication<a>  (MFA) is a simple best practice that adds an extra layer of protection on top of a  username and password. With MFA enabled, when a user signs in to an AWS Management Console, they will be prompted for their username and password (the first factor—what they know), as well as for an authentication code from their MFA device (the second factor—what they have). Taken together, these multiple factors provide  increased security for AWS account settings and resources "
+  } ,{
+    question:"8-  Which service can identify the user that made the API call when an Amazon EC2 instance is terminated?",
+    0:"AWS Trusted Advisor",
+    1:"AWS CloudTrail",
+    2:"AWS X-Ray",
+    3:"AWS Identity and Access Management (AWS IAM)",
+    vrai:"AWS CloudTrail",
+    explication:"Q8:B- – <a href='https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html'> AWS CloudTrail<a>  helps users enable governance, compliance, and operational and risk auditing of their AWS accounts. Actions taken by a user, role, or an AWS service are recorded as events in CloudTrail. Events  include actions taken in the AWS Management Console, AWS Command Line Interface (CLI), and AWS SDKs and APIs. "
+  } 
 
 ];
 
