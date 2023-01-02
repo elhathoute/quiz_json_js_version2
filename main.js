@@ -1,3 +1,14 @@
+fetch('quiz.json')
+  .then(response => response.json())
+  .then(array => {
+
+     var questions=array;
+    console.log(questions);
+
+
+
+
+/*
 let questions =[
   {
     
@@ -73,7 +84,7 @@ let questions =[
   } 
 
 ];
-
+*/
 function randomOfArray(array) {
   var j, x, i;
   for (i = array.length - 1; i > 0; i--) {
@@ -177,7 +188,9 @@ next.addEventListener('click',function(){
     touslesAttribut=random[currentIndex];
     //appeler la fnct pour add questions
     ajouterQuestion(touslesAttribut,arrRandom,questionCount);
-   
+
+    
+
   let lesReponse=document.querySelectorAll("input[type=radio]");
   console.log(lesReponse);
   lenghtQuestion=lesReponse.length;
@@ -205,10 +218,13 @@ for(i=0;i<lenghtQuestion;i++){
  
      //get the right answer
      let reponsrvraix=questions[currentIndex].vrai;
+
+     indexDb=questions[currentIndex].id;
+     console.log(indexDb);
      //incrementer l'indice 
       currentIndex++;
       //comparer right answer with answer of user
-     compareReponse(reponsrvraix,currentIndex-1);
+     compareReponse(reponsrvraix,indexDb);
 
        //remove old question and answers
        title.innerHTML='';
@@ -224,12 +240,22 @@ for(i=0;i<lenghtQuestion;i++){
          time_count.remove();
          replay.style.display="block";
          this.remove();
+
          //show result of user
-         afficherResultat(questionCount);
+         $.ajax({
+          url: 'ControllerQuiz.php',
+          type: 'POST',
+          data: { array: arrayToSentInDb },
+          success: function(response) {
+            console.log(response);
+            // answers.html(response);
+          }
+        });
+        //  afficherResultat(questionCount);
       } 
       
      else{
-      console.log(currentIndex)
+      // console.log(currentIndex)
       arrRandom= random[currentIndex].question;
       touslesAttribut=random[currentIndex];
      ajouterQuestion(touslesAttribut,arrRandom,questionCount);
@@ -237,7 +263,7 @@ for(i=0;i<lenghtQuestion;i++){
 
      //if user no chosen any option and time>0
      let lesReponse=document.querySelectorAll("input[type=radio]");
-     console.log(lesReponse);
+    //  console.log(lesReponse);
      lenghtQuestion=lesReponse.length;
    for(i=0;i<lenghtQuestion;i++){
      
@@ -283,7 +309,7 @@ function ajouterQuestion(tquest,quest,count){
       radio.type='radio';
       radio.id=`option_${i}`;
     
-      radio.dataset.option =tquest[i];
+      radio.dataset.option =tquest[`option_${i}`];
       //create label
     
       let label=document.createElement('label');
@@ -291,7 +317,7 @@ function ajouterQuestion(tquest,quest,count){
       label.htmlFor=`option_${i}`;
       label.setAttribute("id",`option_${i}`);
       //create label text
-      let labelText=document.createTextNode(tquest[i]);
+      let labelText=document.createTextNode(tquest[`option_${i}`]);
       //
       label.appendChild(labelText);
     
@@ -311,13 +337,13 @@ function ajouterQuestion(tquest,quest,count){
  }
 
 }
-
+var arrayToSentInDb=[];
 var arrayCorrectQuest=[];
 
 let arrCorrectAnswers=[];
 function compareReponse(answer,index){//current index
-  console.log(answer);
-  console.log(index);
+  // console.log(answer);
+  // console.log(index);
 
   let lesReponse=document.getElementsByName("question");
   for(let i=0;i<lesReponse.length;i++){
@@ -325,15 +351,18 @@ function compareReponse(answer,index){//current index
         ReponseChoisi=lesReponse[i].dataset.option;
         console.log('ha xno khtar =>' +ReponseChoisi);
         console.log('ha s7i7 =>' +answer);
+
+        arrayToSentInDb.push({'id':index,'choisi':ReponseChoisi});
+
+       
+        console.log(arrayToSentInDb);
+
         if(answer==ReponseChoisi){
-          arrayCorrectQuest.push(index);
-          console.log('egaux');
-          console.log('array answer correct =>'+arrayCorrectQuest);
-         
+          arrayCorrectQuest.push(index-1);   
         }
         else{
           console.log('nonegaux'); 
-          console.log('array answer correct =>'+arrayCorrectQuest);
+          console.log(arrayToSentInDb);
         }
   }
   
@@ -368,10 +397,10 @@ if(arrayCorrectQuest.length>0){
   answers.innerHTML+="<br>";
   answers.innerHTML+='<br> <h3>Votre Explication est: </h3> <br>';
   for(i=0;i<arrayCorrectQuest.length;i++){
-    console.log(random[arrayCorrectQuest[i]].explication);
+    // console.log(random[arrayCorrectQuest[i]].explication);
     
     answers.innerHTML+="<br>";
-    answers.innerHTML+= "<p calss='explication'>explication"+random[arrayCorrectQuest[i]].explication+"</p>";
+    answers.innerHTML+= "<p calss='explication' style='background-color:green' >explication<br>"+random[arrayCorrectQuest[i]].explication+"</p>";
   }
 }
     
@@ -415,3 +444,8 @@ function countDownTime(time,count){
   }
  
 }
+
+
+}
+    
+);
