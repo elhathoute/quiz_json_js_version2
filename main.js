@@ -207,7 +207,7 @@ for(i=0;i<lenghtQuestion;i++){
   
   });
  
-  
+  var arrayCorrectQuest=[];
 
   //btn of submit
   submit.onclick=function(){
@@ -219,7 +219,7 @@ for(i=0;i<lenghtQuestion;i++){
      //get the right answer
      let reponsrvraix=questions[currentIndex].vrai;
 
-     indexDb=questions[currentIndex].id;
+     indexDb=questions[currentIndex].id_reponse;
      console.log(indexDb);
      //incrementer l'indice 
       currentIndex++;
@@ -247,11 +247,17 @@ for(i=0;i<lenghtQuestion;i++){
           type: 'POST',
           data: { array: arrayToSentInDb },
           success: function(response) {
-            console.log(response);
-            // answers.html(response);
+            for(i=0;i<response.length;i++){
+              arrayCorrectQuest.push(response[i]);
+
+            }
+            // arrayCorrectQuest.push(response);
+            arrayCorrectQuest.splice(0,2);
+             console.log(arrayCorrectQuest.length);
+             afficherResultat(questionCount,arrayCorrectQuest);
           }
         });
-        //  afficherResultat(questionCount);
+       
       } 
       
      else{
@@ -338,9 +344,10 @@ function ajouterQuestion(tquest,quest,count){
 
 }
 var arrayToSentInDb=[];
-var arrayCorrectQuest=[];
 
-let arrCorrectAnswers=[];
+
+
+
 function compareReponse(answer,index){//current index
   // console.log(answer);
   // console.log(index);
@@ -352,18 +359,19 @@ function compareReponse(answer,index){//current index
         console.log('ha xno khtar =>' +ReponseChoisi);
         console.log('ha s7i7 =>' +answer);
 
-        arrayToSentInDb.push({'id':index,'choisi':ReponseChoisi});
+        arrayToSentInDb.push({'id':index,'choisi':ReponseChoisi,'indexRandom':currentIndex-1});
 
        
         console.log(arrayToSentInDb);
 
-        if(answer==ReponseChoisi){
-          arrayCorrectQuest.push(index-1);   
-        }
-        else{
-          console.log('nonegaux'); 
-          console.log(arrayToSentInDb);
-        }
+        // if(answer==ReponseChoisi){
+        //   // arrayCorrectQuest.push(currentIndex-1);   
+        //   // console.log(arrayCorrectQuest);
+        // }
+        // else{
+        //   console.log('nonegaux'); 
+        //   console.log(arrayToSentInDb);
+        // }
   }
   
 
@@ -371,7 +379,9 @@ function compareReponse(answer,index){//current index
 
 }
 
-function afficherResultat(count){
+function afficherResultat(count,array){
+  console.log('array');
+  console.log(array);
 
   if(currentIndex===count){
     
