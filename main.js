@@ -417,7 +417,7 @@ if(arrayCorrectQuest.length>0){
   for(i=0;i<arrayCorrectQuest.length;i++){
    
     answers.innerHTML+="<br>";
-    answers.innerHTML+= "<p calss='explication' style='background-color:green;border-radius:7px;padding:20px;margin:0px 12px;' >explication N° :"+(i+1)+"<br>"+random[arrayCorrectQuest[i]].explication+"</p>";
+    answers.innerHTML+= "<p calss='explication' style='background-color:#80FF95;border-radius:7px;padding:20px;margin:0px 12px;' >explication N° :"+(i+1)+"<br>"+random[arrayCorrectQuest[i]].explication+"</p>";
   
   }
 

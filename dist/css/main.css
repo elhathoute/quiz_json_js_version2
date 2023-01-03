@@ -129,6 +129,11 @@ body {
   display: block;
   text-align: center;
   line-height: 40px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  color: gray;
+  margin: 20px;
+  border-radius: 4px;
 }
 .info_box .buttons {
   display: flex;
@@ -218,25 +223,25 @@ body {
 .quiz_box .answers-box .answers #option_0 {
   cursor: pointer;
   color: rgb(0, 0, 0);
-  font-size: 16px;
+  font-size: 18px;
   margin: 2px;
 }
 .quiz_box .answers-box .answers #option_1 {
   cursor: pointer;
-  color: rgb(10, 7, 70);
-  font-size: 15px;
+  color: rgb(20, 20, 100);
+  font-size: 19px;
   margin: 2px;
 }
 .quiz_box .answers-box .answers #option_2 {
   cursor: pointer;
-  color: rgb(20, 14, 140);
-  font-size: 16px;
+  color: rgb(40, 40, 200);
+  font-size: 20px;
   margin: 2px;
 }
 .quiz_box .answers-box .answers #option_3 {
   cursor: pointer;
-  color: rgb(30, 21, 210);
-  font-size: 17px;
+  color: rgb(60, 60, 255);
+  font-size: 21px;
   margin: 2px;
 }
 .quiz_box .answers-box .num-question {

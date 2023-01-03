@@ -21,8 +21,12 @@
    .info-list{
      display: block;
     text-align: $text-align;
-   
      line-height:40px;
+     height: 200px;
+     background-color: rgb(255, 255, 255);
+     color: gray;
+     margin: 20px;
+     border-radius: 4px;
 }
    .buttons{
 
@@ -73,7 +77,7 @@
       margin: 20px;
       background-color: white;
    }
-   
+
  .answers-box{
    @extend .title;
    height: 350px;
@@ -99,11 +103,11 @@
    @while($i<4){
       & #option_#{$i}{
          cursor: pointer;
-         color: rgb(10*$i, 7*$i, 70*$i);
+         color: rgb(20*$i, 20*$i, 100*$i);
          @if($i==0){
-            font-size: 16px;
+            font-size: 18px;
          }@else{
-            font-size: 14px+$i;
+            font-size: 18px+$i;
          }
          $i:$i+1;
          margin:2px;
