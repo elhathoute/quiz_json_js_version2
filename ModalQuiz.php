@@ -22,8 +22,8 @@ require_once 'db.php';
         return $result;
 
         }
-        public function checkAnswers($id,$choisi){
-            $sql = "SELECT id from answers where id=$id and vrai='$choisi'";
+        public function checkAnswers($idchoisi){
+            $sql = "SELECT id from answers where id=$idchoisi and etat=1";
             $stm = $this->connexion()->query($sql);
             $result = $stm->fetchAll();
             return $result;

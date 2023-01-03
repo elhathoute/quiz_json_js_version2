@@ -7,6 +7,9 @@
     #time-counter{
       color: $red-color;
     }
+    #time-counter{
+      color: rgb(249, 10, 10);
+    }
    .info-title{
    //  color: rgb(255, 159, 14);
     text-align: $text-align;
@@ -63,20 +66,20 @@
 .quiz_box{
    .title{
       font-size: 14px;
-      color: rgb(252, 255, 252);
+      color: rgb(17, 18, 17);
       text-align: center;
       border: 2px dashed rgb(240, 240, 240);
       border-radius: 5px;
       margin: 20px;
-      background-color: #908c8c;
+      background-color: white;
    }
+   
  .answers-box{
    @extend .title;
-   font-size: 13px;
-   padding: 30px;
-
+   height: 350px;
+   background-color: white;
   .answers{
-   padding: 0px 10px ;
+   padding: 0px 30px ;
    display: flex;
    justify-content: start;
    background-color: $background-answers;
@@ -84,7 +87,8 @@
    height:60px;
    cursor: pointer;
    padding: 15px;
-  margin-top: 10px;
+   margin: 10px;
+ 
   box-shadow:3px 3px  $shadow-answers;
    &:not(:last-child) {
       border-bottom: 2px solid rgb(249, 249, 249);
@@ -109,8 +113,10 @@
    
   }
 
+
+
   .num-question{
-   margin-top: 10px;
+   margin: 18px 15px;
    height: 30px;
    align-items: center;
    padding-top: 6px;
@@ -132,3 +138,4 @@
 
 
 }
+

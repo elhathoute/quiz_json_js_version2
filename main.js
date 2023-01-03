@@ -254,6 +254,7 @@ for(i=0;i<lenghtQuestion;i++){
             // arrayCorrectQuest.push(response);
             arrayCorrectQuest.splice(0,2);
              console.log(arrayCorrectQuest.length);
+             console.log(arrayCorrectQuest);
              afficherResultat(questionCount,arrayCorrectQuest);
           }
         });
@@ -314,6 +315,7 @@ function ajouterQuestion(tquest,quest,count){
       radio.className='choise-question';
       radio.type='radio';
       radio.id=`option_${i}`;
+      radio.value=tquest[`id_${i}`];
     
       radio.dataset.option =tquest[`option_${i}`];
       //create label
@@ -345,6 +347,8 @@ function ajouterQuestion(tquest,quest,count){
 }
 var arrayToSentInDb=[];
 
+var arrayQuestFalse=[];
+
 
 
 
@@ -355,12 +359,16 @@ function compareReponse(answer,index){//current index
   let lesReponse=document.getElementsByName("question");
   for(let i=0;i<lesReponse.length;i++){
   if(lesReponse[i].checked){
-        ReponseChoisi=lesReponse[i].dataset.option;
+        ReponseChoisi=lesReponse[i].value;
+
         console.log('ha xno khtar =>' +ReponseChoisi);
         console.log('ha s7i7 =>' +answer);
 
-        arrayToSentInDb.push({'id':index,'choisi':ReponseChoisi,'indexRandom':currentIndex-1});
-
+        arrayToSentInDb.push({'id_rep_choisi':ReponseChoisi,'indexRandom':currentIndex-1});
+      
+        // for(i=0;i<random.length;i++){
+        //   console.log(random[i]);
+        // }
        
         console.log(arrayToSentInDb);
 
@@ -407,11 +415,12 @@ if(arrayCorrectQuest.length>0){
   answers.innerHTML+="<br>";
   answers.innerHTML+='<br> <h3>Votre Explication est: </h3> <br>';
   for(i=0;i<arrayCorrectQuest.length;i++){
-    // console.log(random[arrayCorrectQuest[i]].explication);
-    
+   
     answers.innerHTML+="<br>";
-    answers.innerHTML+= "<p calss='explication' style='background-color:green' >explication<br>"+random[arrayCorrectQuest[i]].explication+"</p>";
+    answers.innerHTML+= "<p calss='explication' style='background-color:green;border-radius:7px;padding:20px;margin:0px 12px;' >explication N° :"+(i+1)+"<br>"+random[arrayCorrectQuest[i]].explication+"</p>";
+  
   }
+
 }
     
    

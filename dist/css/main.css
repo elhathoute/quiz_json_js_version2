@@ -116,6 +116,9 @@ body {
 .info_box #time-counter {
   color: red;
 }
+.info_box #time-counter {
+  color: rgb(249, 10, 10);
+}
 .info_box .info-title {
   text-align: center;
   font-size: 20px;
@@ -186,19 +189,19 @@ body {
 
 .quiz_box .title, .quiz_box .answers-box {
   font-size: 14px;
-  color: rgb(252, 255, 252);
+  color: rgb(17, 18, 17);
   text-align: center;
   border: 2px dashed rgb(240, 240, 240);
   border-radius: 5px;
   margin: 20px;
-  background-color: #908c8c;
+  background-color: white;
 }
 .quiz_box .answers-box {
-  font-size: 13px;
-  padding: 30px;
+  height: 350px;
+  background-color: white;
 }
 .quiz_box .answers-box .answers {
-  padding: 0px 10px;
+  padding: 0px 30px;
   display: flex;
   justify-content: start;
   background-color: #b8c1ec;
@@ -206,7 +209,7 @@ body {
   height: 60px;
   cursor: pointer;
   padding: 15px;
-  margin-top: 10px;
+  margin: 10px;
   box-shadow: 3px 3px #2ecc71;
 }
 .quiz_box .answers-box .answers:not(:last-child) {
@@ -237,7 +240,7 @@ body {
   margin: 2px;
 }
 .quiz_box .answers-box .num-question {
-  margin-top: 10px;
+  margin: 18px 15px;
   height: 30px;
   align-items: center;
   padding-top: 6px;

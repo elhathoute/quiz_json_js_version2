@@ -4,7 +4,7 @@
     private $host = "localhost";
     private $user = "root";
     private $pwd = "";
-    private $dbName = "management_quiz";
+    private $dbName = "management_quiz2";
 
     //créer method qui contient la connexion de la base  de donneé
     protected  function connexion(){

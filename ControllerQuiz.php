@@ -12,10 +12,12 @@ $result = $question->getQuestions();
 
 file_put_contents('quiz.json', json_encode($result));
 $arrayCorectAnswer =[];
+// var_dump($array);
+// die;
  if (count($array)>0) {
 foreach ($array as $answer) {
     // var_dump($answer);
-     $result=$question->checkAnswers($answer['id'],$answer['choisi']);
+     $result=$question->checkAnswers($answer['id_rep_choisi']);
         // echo count($result)."\n";
        
 
