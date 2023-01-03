@@ -403,11 +403,11 @@ function afficherResultat(count,array){
 
   }
   else if((arrayCorrectQuest.length) >=(count/2) ){
-    answers.innerHTML= '<span id="nom-user">'+nomUser +'</span>   nice 😎, You got '+ (arrayCorrectQuest.length) +' out of '+ count +'</span>';
+    answers.innerHTML= '<span id="nom-user">'+nomUser +'</span>   nice 😎, You got'+ (arrayCorrectQuest.length) +' out of '+ count +'</span>';
       
   }
   else { 
-    answers.innerHTML= '<span id="nom-user">'+nomUser +'</span>  sorry 😐, You got only '+ (arrayCorrectQuest.length) +' out of '+ count +'</span>';
+    answers.innerHTML= '<span id="nom-user">'+nomUser +'</span>  sorry 😐, You got only'+ (arrayCorrectQuest.length) +' out of '+ count +'</span>';
       
   }
    
