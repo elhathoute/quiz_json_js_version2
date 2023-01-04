@@ -129,7 +129,6 @@ body {
   display: block;
   text-align: center;
   line-height: 40px;
-  height: 200px;
   background-color: rgb(255, 255, 255);
   color: gray;
   margin: 20px;
@@ -202,7 +201,6 @@ body {
   background-color: white;
 }
 .quiz_box .answers-box {
-  height: 350px;
   background-color: white;
 }
 .quiz_box .answers-box .answers {
@@ -211,7 +209,6 @@ body {
   justify-content: start;
   background-color: #b8c1ec;
   border-radius: 4px;
-  height: 60px;
   cursor: pointer;
   padding: 15px;
   margin: 10px;

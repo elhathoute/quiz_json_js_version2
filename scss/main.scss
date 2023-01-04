@@ -22,7 +22,7 @@
      display: block;
     text-align: $text-align;
      line-height:40px;
-     height: 200px;
+  
      background-color: rgb(255, 255, 255);
      color: gray;
      margin: 20px;
@@ -80,7 +80,7 @@
 
  .answers-box{
    @extend .title;
-   height: 350px;
+   // height: 350px;
    background-color: white;
   .answers{
    padding: 0px 30px ;
@@ -88,7 +88,7 @@
    justify-content: start;
    background-color: $background-answers;
    border-radius: 4px;
-   height:60px;
+  
    cursor: pointer;
    padding: 15px;
    margin: 10px;
